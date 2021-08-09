@@ -88,7 +88,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Đơn Hàng</span>
-                <span class="info-box-number">0</span>
+                <span class="info-box-number">{{$Order_count}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>

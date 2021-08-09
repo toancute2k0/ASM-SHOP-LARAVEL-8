@@ -20,8 +20,9 @@ class CreateOrderTable extends Migration
             $table->string('phone');
             $table->string('address');
             $table->text('note');
-            $table->tinyInteger('status')->default(1);
-            $table->float('order_total', 9,3);
+            $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('payment')->default(0);
+            $table->float('order_total');
             $table->foreignId("users_id")->constraint("users")->onDelete("cascade");
             $table->timestamps();
         });

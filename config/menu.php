@@ -69,31 +69,11 @@ return [
         'label' => 'QL Đơn Hàng',
         'route' => 'order.index',
         'icon' => 'fa-shopping-basket',
-        'items' => [
-            [
-                'label' => 'Xem Đơn Hàng',
-                'route' => 'order.index'
-            ],
-            [
-                'label' => 'Thêm Đơn Hàng',
-                'route' => 'order.create'
-            ]
-        ]
     ],
     [
         'label' => 'QL Tài Khoản',
         'route' => 'user.index',
         'icon' => 'fa-user',
-        'items' => [
-            [
-                'label' => 'Xem Tài Khoản',
-                'route' => 'user.index'
-            ],
-            [
-                'label' => 'Thêm Tài Khoản',
-                'route' => 'user.create'
-            ]
-        ]
     ],
     [
         'label' => 'QL Thống Kê',

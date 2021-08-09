@@ -62,12 +62,12 @@
                <p>
                     Vui lòng truy cập email
                     <span style="color: #0011ff">
-                        {{Auth::user()->email}}
+                        {{$order->email}}
                      </span> để theo dõi tình trạng đơn hàng<br />
                     Chân thành cảm ơn bạn ^-^!
                </p>
                <a href="{{route('home.shop')}}" class="btn btn-success mt-4">
-                    TIẾP TỤC MUA HÀNH
+                    TIẾP TỤC MUA HÀNG
                </a>
           </div>
      </div>

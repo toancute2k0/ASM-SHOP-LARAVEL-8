@@ -10,6 +10,8 @@ use App\Http\Controllers\ImageController;
 Route::get('/', 'HomeController@index') -> name('home.index');
 Route::get('/shop', 'HomeController@shop') -> name('home.shop');
 Route::get('/search', 'HomeController@search') -> name('home.search');
+Route::get('/contact', 'ContactController@contact') -> name('home.contact');
+Route::post('/contact', 'ContactController@postContact') -> name('home.contact');
 
 Route::get('/cart', 'CartController@cart')->name('home.cart');
 Route::get('/add-to-cart/{id}', 'CartController@addToCart')->name('add.to.cart');
@@ -42,9 +44,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
 Route::get('/admin/login', 'Admin\AdminController@login') -> name('login');
 Route::post('/admin/login', 'Admin\AdminController@postLogin') -> name('login');
-// Route::get('/admin/register', 'AdminController@register') -> name('register');
-// Route::post('/admin/register', 'AdminController@postregister') -> name('register');
-// login register home
 Route::get('/login',['as'=>'admin.login','uses'=>'Admin\AdminController@login'])
     ->name('login');
 Route::post('/login',['as'=>'admin.postLogin','uses'=>'Admin\AdminController@postLogin'])   ->name('login');

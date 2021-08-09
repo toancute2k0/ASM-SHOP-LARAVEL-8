@@ -1,4 +1,10 @@
-@extends('layouts.client') @section('title', 'Đặt Hàng')
+@extends('layouts.client') @section('title', 'Đặt Hàng') @section('css')
+    <style>
+        .text-muted {
+            color: red !important;
+        }
+    </style>
+@endsection
 @section('content')
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="{{url('public/client')}}/img/breadcrumb.jpg">
@@ -29,22 +35,42 @@
                             <div class="checkout__input">
                                 <p>Họ và Tên<span>*</span></p>
                                 <input type="text" name="name" value="{{Auth::user()->name}}">
+                                @error('name')
+                                <small id="helpId" class="text-muted">
+                                        {{$message}}
+                                </small>
+                            @enderror
                             </div>
                             <div class="checkout__input">
                                 <p>Địa chỉ<span>*</span></p>
                                 <input type="text" placeholder="Địa chỉ cụ thể" class="checkout__input__add" name="address" value="{{Auth::user()->address}}">
+                                @error('address')
+                                <small id="helpId" class="text-muted">
+                                        {{$message}}
+                                </small>
+                                @enderror
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Số Điện Thoại<span>*</span></p>
                                         <input type="number" name="phone" value="{{Auth::user()->phone}}">
+                                        @error('phone')
+                                        <small id="helpId" class="text-muted">
+                                                {{$message}}
+                                        </small>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Email<span>*</span></p>
                                         <input type="text" name="email" value="{{Auth::user()->email}}">
+                                        @error('email')
+                                        <small id="helpId" class="text-muted">
+                                                {{$message}}
+                                        </small>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -98,19 +124,17 @@
                                         Phương thức thanh toán?
                                     </label>
                                 </div>
-                                <div class="checkout__input__checkbox">
-                                    <label for="payment">
-                                        Thanh toán khi nhận hàng
-                                        <input type="checkbox" id="payment">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <div class="checkout__input__checkbox">
-                                    <label for="paypal">
-                                        Paypal/Mastercard
-                                        <input type="checkbox" id="paypal">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                <div class="checkout__input__checkbox row">
+                                    <select name="payment" class="form-select mb-3 col-md-11 centered col-11">
+                                        <option value="">--Chọn Phương Thức--</option>
+                                        <option value="0">Thanh Toán Khi Nhận Hàng</option>
+                                        <option value="1">Paypal/Mastercard</option>
+                                    </select>
+                                    @error('payment')
+                                        <small id="helpId" class="text-muted">
+                                                {{$message}}
+                                        </small>
+                                    @enderror
                                 </div>
                                 <button type="submit" class="site-btn">Đặt hàng</button>
                             </div>

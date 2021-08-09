@@ -95,17 +95,17 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="{{route('home.index')}}">Trang Chủ</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
+                <li><a href="{{route('home.shop')}}">Shop</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
+                        <li><a href="#">Shop Details</a></li>
+                        <li><a href="{{route('home.cart')}}">Shoping Cart</a></li>
+                        <li><a href="{{route('checkout')}}">Check Out</a></li>
+                        <li><a href="#">Blog Details</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="{{route('home.contact')}}">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -117,8 +117,8 @@
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                <li>Free Shipping for all Order of $99</li>
+                <li><i class="fa fa-envelope"></i> Toantqpc00613@fpt.edu.vn</li>
+                <li>Miễn Phí ship cho đờn hàng dưới 299k</li>
             </ul>
         </div>
     </div>
@@ -133,7 +133,7 @@
                         <div class="header__top__left">
                             <ul>
                                 <li><i class="fa fa-envelope"></i> toantqpc00613@fpt.edu.vn</li>
-                                <li>Free Shipping for all Order of $99</li>
+                                <li>Miễn phí ship cho đờn hàng 299k</li>
                             </ul>
                         </div>
                     </div>
@@ -191,14 +191,14 @@
                             </li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="#">Shop Details</a></li>
+                                    <li><a href="{{route('home.cart')}}">Shoping Cart</a></li>
+                                    <li><a href="#">Check Out</a></li>
+                                    <li><a href="#">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="{{route('home.contact')}}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

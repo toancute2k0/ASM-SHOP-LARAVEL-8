@@ -1,58 +1,6 @@
 @extends('layouts.client')
+@section('title', 'Liên Hệ')
 @section('content')
-        <!-- Hero Section Begin -->
-        <section class="hero hero-normal">
-        <div class="container">
-            <div class="row">
-            <div class="col-lg-3">
-                <div class="hero__categories">
-                <div class="hero__categories__all">
-                    <i class="fa fa-bars"></i>
-                    <span>All departments</span>
-                </div>
-                <ul>
-                    <li><a href="#">Fresh Meat</a></li>
-                    <li><a href="#">Vegetables</a></li>
-                    <li><a href="#">Fruit & Nut Gifts</a></li>
-                    <li><a href="#">Fresh Berries</a></li>
-                    <li><a href="#">Ocean Foods</a></li>
-                    <li><a href="#">Butter & Eggs</a></li>
-                    <li><a href="#">Fastfood</a></li>
-                    <li><a href="#">Fresh Onion</a></li>
-                    <li><a href="#">Papayaya & Crisps</a></li>
-                    <li><a href="#">Oatmeal</a></li>
-                    <li><a href="#">Fresh Bananas</a></li>
-                </ul>
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <div class="hero__search">
-                <div class="hero__search__form">
-                    <form action="#">
-                    <div class="hero__search__categories">
-                        All Categories
-                        <span class="arrow_carrot-down"></span>
-                    </div>
-                    <input type="text" placeholder="What do yo u need?" />
-                    <button type="submit" class="site-btn">SEARCH</button>
-                    </form>
-                </div>
-                <div class="hero__search__phone">
-                    <div class="hero__search__phone__icon">
-                    <i class="fa fa-phone"></i>
-                    </div>
-                    <div class="hero__search__phone__text">
-                    <h5>+65 11.188.888</h5>
-                    <span>support 24/7 time</span>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-        </section>
-        <!-- Hero Section End -->
-
         <!-- Breadcrumb Section Begin -->
         <section class="breadcrumb-section set-bg" data-setbg="{{url('public/client')}}/img/breadcrumb.jpg">
         <div class="container">
@@ -61,8 +9,8 @@
                 <div class="breadcrumb__text">
                 <h2>Contact Us</h2>
                 <div class="breadcrumb__option">
-                    <a href="./index.html">Home</a>
-                    <span>Contact Us</span>
+                    <a href="{{route('home.index')}}">Home</a>
+                    <span>Liên Hệ</span>
                 </div>
                 </div>
             </div>
@@ -78,21 +26,21 @@
             <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                 <div class="contact__widget">
                 <span class="icon_phone"></span>
-                <h4>Phone</h4>
-                <p>+01-3-8888-6868</p>
+                <h4>Số điện thoại</h4>
+                <p>0822 576 436</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                 <div class="contact__widget">
                 <span class="icon_pin_alt"></span>
-                <h4>Address</h4>
-                <p>60-49 Road 11378 New York</p>
+                <h4>Địa chỉ</h4>
+                <p>288 Nguyễn Văn Linh, An Khánh, Ninh Kiều, Cần Thơ</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                 <div class="contact__widget">
                 <span class="icon_clock_alt"></span>
-                <h4>Open time</h4>
+                <h4>Giờ hoạt động</h4>
                 <p>10:00 am to 23:00 pm</p>
                 </div>
             </div>
@@ -100,7 +48,7 @@
                 <div class="contact__widget">
                 <span class="icon_mail_alt"></span>
                 <h4>Email</h4>
-                <p>hello@colorlib.com</p>
+                <p>toanpc00613@fpt.edu.vn</p>
                 </div>
             </div>
             </div>
@@ -111,7 +59,7 @@
         <!-- Map Begin -->
         <div class="map">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49116.39176087041!2d-86.41867791216099!3d39.69977417971648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886ca48c841038a1%3A0x70cfba96bf847f0!2sPlainfield%2C%20IN%2C%20USA!5e0!3m2!1sen!2sbd!4v1586106673811!5m2!1sen!2sbd"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8802276473216!2d105.75475265657215!3d10.02674143833513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a088476bafffdf%3A0x4da67960eb05332d!2zVHLGsOG7nW5nIENhbyDEkOG6s25nIFRo4buxYyBIw6BuaCBGUFQgUG9seXRlY2huaWMgQ-G6p24gVGjGoQ!5e0!3m2!1svi!2s!4v1628478945310!5m2!1svi!2s"
             height="500"
             style="border: 0"
             allowfullscreen=""
@@ -121,10 +69,10 @@
         <div class="map-inside">
             <i class="icon_pin"></i>
             <div class="inside-widget">
-            <h4>New York</h4>
+            <h4>Cao đẳng Fpt polytechnic</h4>
             <ul>
                 <li>Phone: +12-345-6789</li>
-                <li>Add: 16 Creek Ave. Farmingdale, NY</li>
+                <li> 288 Nguyễn Văn Linh, An Khánh, Ninh Kiều, Cần Thơ</li>
             </ul>
             </div>
         </div>
@@ -137,23 +85,23 @@
             <div class="row">
             <div class="col-lg-12">
                 <div class="contact__form__title">
-                <h2>Leave Message</h2>
+                <h2>Liên Hệ Góp Ý</h2>
                 </div>
             </div>
             </div>
-            <form action="#">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                <input type="text" placeholder="Your name" />
+            <form action="{{route('home.contact')}}" method="POST"> @csrf
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                    <input type="text" placeholder="Tên của bạn" name="name" />
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                    <input type="text" placeholder="Email liên hệ" name="email"/>
+                    </div>
+                    <div class="col-lg-12 text-center">
+                    <textarea placeholder="Nội dung tin nhắn" name="content"></textarea>
+                    <button type="submit" class="site-btn">GỬI MAIL</button>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                <input type="text" placeholder="Your Email" />
-                </div>
-                <div class="col-lg-12 text-center">
-                <textarea placeholder="Your message"></textarea>
-                <button type="submit" class="site-btn">SEND MESSAGE</button>
-                </div>
-            </div>
             </form>
         </div>
         </div>

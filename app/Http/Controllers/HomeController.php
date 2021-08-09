@@ -5,6 +5,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+
 class HomeController extends Controller
 {
     public function index () {
@@ -55,5 +56,20 @@ class HomeController extends Controller
             ->get();
             return view('frontend.search', compact('keyProduct'));
     }
+
+    // public function contact(){
+    //     return view('frontend.contact');
+    // }
+
+    // public function postContact(Request $request){
+    //     \Mail::sent('email.contact',[
+    //         'name' => $request->name,
+    //         'contact' => $request->content,
+    //     ], function($email) use($request){
+    //         $email->to('nhaozocom007@gmail.com', $request->name);
+    //         $email->from($request->email);
+    //         $email->subject('Test Mail thôi ó');
+    //     });
+    // }
 
 }

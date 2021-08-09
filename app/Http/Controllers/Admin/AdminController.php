@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
@@ -20,8 +21,9 @@ class AdminController extends Controller
         $product_count = Product::count();
         $category_count = Category::count();
         $user_count = User::count();
+        $Order_count = Order::count();
         return view('admin.dashboard', compact('product_count', 'category_count',
-         'user_count'));
+         'user_count', 'Order_count'));
     }
 
 
