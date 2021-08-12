@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{url('public/client')}}/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="{{url('public/client')}}/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="{{url('public/client')}}/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="{{url('public/client')}}/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="{{url('public/client')}}/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="{{url('public/client')}}/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="{{url('public/client')}}/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="{{url('public/client')}}/css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{url('client/css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('client/css/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('client/css/elegant-icons.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('client/css/nice-select.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('client/css/jquery-ui.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('client/css/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('client/css/slicknav.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('client/css/style.css')}}" type="text/css">
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <!-- CSS -->
@@ -66,14 +66,22 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="{{url('public/client')}}/img/logo.png" alt=""></a>
+            <a href="#"><img src="{{url('client/img/logo.png')}}" alt=""></a>
         </div>
         <div class="humberger__menu__cart" id="change-item-cart">
+            @php $total = 0 @endphp
+                    @foreach((array) session('cart') as $id => $details)
+                        @php $total += $details['price'] * $details['quantity'] @endphp
+                    @endforeach
             <ul>
                 <li><a href="#"><i class="fa fa-heart"></i> <span>0</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                <li><a href="{{route('home.cart')}}"><i class="fa fa-shopping-bag"></i>
+                    <span id="total-quanty-show">{{ count((array) session('cart')) }}</span>
+                </a></li>
             </ul>
-            <div class="header__cart__price">Tổng: <span>$150.00</span></div>
+            <div class="header__cart__price">
+                Tổng: <span>{{number_format("$total",0,",",".")}}đ</span>
+            </div>
         </div>
         <div class="humberger__menu__widget">
             @if (Auth::check())
@@ -95,25 +103,24 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="{{route('home.index')}}">Trang Chủ</a></li>
-                <li><a href="{{route('home.shop')}}">Shop</a></li>
+                <li><a href="{{route('home.shop')}}">Sản Phẩm</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="#">Shop Details</a></li>
-                        <li><a href="{{route('home.cart')}}">Shoping Cart</a></li>
-                        <li><a href="{{route('checkout')}}">Check Out</a></li>
-                        <li><a href="#">Blog Details</a></li>
+                        <li><a href="{{route('home.cart')}}">Giỏ Hàng</a></li>
+                        <li><a href="{{route('checkout')}}">Thanh Toán</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="{{route('home.contact')}}">Contact</a></li>
+                <li><a href="#">Bài Viết</a></li>
+                <li><a href="{{route('home.about')}}">Giới Thiệu</a></li>
+                <li><a href="{{route('home.contact')}}">Liên Hệ</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-pinterest-p"></i></a>
         </div>
         <div class="humberger__menu__contact">
             <ul>
@@ -140,10 +147,10 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                                <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             @if (Auth::check())
                                 <div class="header__top__right__language">
@@ -174,35 +181,32 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="{{route('home.index')}}"><img src="{{url('public/client')}}/img/logo.png" alt=""></a>
+                        <a href="{{route('home.index')}}"><img src="{{url('client/img/logo.png')}}" alt=""></a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <nav class="header__menu">
                         <ul>
                             <li class="active">
-                                <a href="{{route('home.index')}}">Home</a></li>
+                                <a href="{{route('home.index')}}">Trang Chủ</a></li>
                             <li>
-
-                                    <a href="{{route('home.shop')}}">
-                                        Shop
-                                    </a>
-
+                                <a href="{{route('home.shop')}}">
+                                    Sản Phẩm
+                                </a>
                             </li>
+                            <li><a href="#">Bài Viết</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="#">Shop Details</a></li>
-                                    <li><a href="{{route('home.cart')}}">Shoping Cart</a></li>
-                                    <li><a href="#">Check Out</a></li>
-                                    <li><a href="#">Blog Details</a></li>
+                                    <li><a href="{{route('home.about')}}">Giới Thiệu</a></li>
+                                    <li><a href="{{route('home.cart')}}">Giỏ Hàng</a></li>
+                                    <li><a href="{{route('checkout')}}">Thanh Toán</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="{{route('home.contact')}}">Contact</a></li>
+                            <li><a href="{{route('home.contact')}}">Liên Hệ</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-2">
                     @php $total = 0 @endphp
                     @foreach((array) session('cart') as $id => $details)
                         @php $total += $details['price'] * $details['quantity'] @endphp
@@ -281,10 +285,10 @@
     <footer class="footer spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="{{url('public/client')}}/img/logo.png" alt=""></a>
+                            <a href="./index.html"><img src="{{url('client/img/logo.png')}}" alt=""></a>
                         </div>
                         <ul>
                             <li><b>Địa chỉ:</b> 288 Nguyễn Văn Linh, An Khánh, Ninh Kiều, Cần Thơ</li>
@@ -293,40 +297,19 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                <div class="col-lg-6 col-md-12">
                     <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <h6>Liên Hệ</h6>
+                        <p>Mọi chi tiết góp ý mời bạn gửi mail bên dưới. Thank</p>
                         <form action="#">
                             <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
+                            <button type="submit" class="site-btn">Liên Hệ</button>
                         </form>
                         <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/tran.quoctoan.75033/"><i class="fa fa-pinterest"></i></a>
                         </div>
                     </div>
                 </div>
@@ -335,9 +318,9 @@
                 <div class="col-lg-12">
                     <div class="footer__copyright">
                         <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.facebook.com/tran.quoctoan.75033/" target="_blank">Trần Quốc Toản</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src="{{url('public/client')}}/img/payment-item.png" alt=""></div>
+                        <div class="footer__copyright__payment"><img src="{{url('client/img/payment-item.png')}}" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -346,14 +329,14 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="{{url('public/client')}}/js/jquery-3.3.1.min.js"></script>
-    <script src="{{url('public/client')}}/js/bootstrap.min.js"></script>
-    <script src="{{url('public/client')}}/js/jquery.nice-select.min.js"></script>
-    <script src="{{url('public/client')}}/js/jquery-ui.min.js"></script>
-    <script src="{{url('public/client')}}/js/jquery.slicknav.js"></script>
-    <script src="{{url('public/client')}}/js/mixitup.min.js"></script>
-    <script src="{{url('public/client')}}/js/owl.carousel.min.js"></script>
-    <script src="{{url('public/client')}}/js/main.js"></script>
+    <script src="{{url('client/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{url('client/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('client/js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{url('client/js/jquery-ui.min.js')}}"></script>
+    <script src="{{url('client/js/jquery.slicknav.js')}}"></script>
+    <script src="{{url('client/js/mixitup.min.js')}}"></script>
+    <script src="{{url('client/js/owl.carousel.min.js')}}"></script>
+    <script src="{{url('client/js/main.js')}}"></script>
     @yield('js')
     {{-- xử lí cart ajax --}}
     <x-error/>

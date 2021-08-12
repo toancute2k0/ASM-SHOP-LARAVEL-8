@@ -12,6 +12,7 @@ use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -44,6 +45,13 @@ class AdminController extends Controller
             'avatar' => 1,
 
         ]);
+        Mail::send('mail.login_success', array(
+            'user' => $user,
+        ), function($message) use ($data){
+            $message->from('nhaozocom700@gmail.com', 'OGANI SHOP');
+            $message->to($data->email);
+            $message->subject('Đăng Kí Thành công tài khoản');
+        });
         $user -> save();
         return redirect()->route('login')->with('success', 'Đăng kí thành công thành công!');
     }

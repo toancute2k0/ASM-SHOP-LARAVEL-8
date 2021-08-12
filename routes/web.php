@@ -10,6 +10,7 @@ use App\Http\Controllers\ImageController;
 Route::get('/', 'HomeController@index') -> name('home.index');
 Route::get('/shop', 'HomeController@shop') -> name('home.shop');
 Route::get('/search', 'HomeController@search') -> name('home.search');
+Route::get('/about', 'HomeController@about') -> name('home.about');
 Route::get('/contact', 'ContactController@contact') -> name('home.contact');
 Route::post('/contact', 'ContactController@postContact') -> name('home.contact');
 

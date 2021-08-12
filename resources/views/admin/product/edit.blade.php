@@ -104,7 +104,7 @@
                             <div class="image-area">
                                 <a href="{{url('/admin/product/deleteimage/'.$img->id)}}" class="remove-image" style="display: inline">x</a>
 
-                                <img src="{{url('public/uploads/product_details')}}/{{$img->image_details}}" alt="{{$img->id}}">
+                                <img src="{{url('uploads/product_details')}}/{{$img->image_details}}" alt="{{$img->id}}">
                             </div>
                         @endforeach
                         @error('image_details')
@@ -162,10 +162,10 @@
                     <div class="form-group">
                         <label for="">Hình Ảnh</label>
                         <div class="custom-file">
-                            <input value="{{url('public/uploads/products')}}/{{$product->image}}"type="file" name="image" id="files" class="custom-file-input" id="customFile">
+                            <input value="{{url('uploads/products')}}/{{$product->image}}"type="file" name="image" id="files" class="custom-file-input" id="customFile">
                             <label class="custom-file-label" for="customFile">Choose file</label>
                         </div>
-                        <img id="image" src="{{url('public/uploads/products')}}/{{$product->image}}" class="rounded" style="width:100%">
+                        <img id="image" src="{{url('uploads/products')}}/{{$product->image}}" class="rounded" style="width:100%">
                         @error('image')
                         <small id="helpId" class="text-muted">
                                 {{$message}}
@@ -183,7 +183,7 @@
 @endsection
 @section('css')
     <!-- summernote -->
-    <link rel="stylesheet" href="{{url('public/backend')}}/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="{{url('backend/plugins/summernote/summernote-bs4.min.css')}}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <style>
@@ -234,9 +234,9 @@
     </style>
 @endsection
 @section('js')
-    <script src="{{url('public/backend')}}/dist/js/slug.js"></script>
+    <script src="{{url('backend')}}/dist/js/slug.js"></script>
     <!-- Summernote -->
-    <script src="{{url('public/backend')}}/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="{{url('backend')}}/plugins/summernote/summernote-bs4.min.js"></script>
     <script>
         $(function () {
             // Summernote

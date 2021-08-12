@@ -16,6 +16,7 @@ class Category extends Model
     public function products() {
         return $this->hasMany(Product::class, 'category_id', 'id')->where('status', 1);
     }
+
     public function product_cate() {
         return $this->hasMany(Product::class);
     }

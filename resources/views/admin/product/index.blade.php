@@ -51,7 +51,7 @@
                     </td>
                     <td>{{$prod->created_at->format('m-d-Y')}}</td>
                     <td class="text-center">
-                        <img src="{{url('public/uploads/products')}}/{{$prod->image}}" width="30" />
+                        <img src="{{url('uploads/products')}}/{{$prod->image}}" width="30" />
                     </td>
                     <td class="text-right">
                         @if ($prod->status == 0)

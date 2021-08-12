@@ -10,7 +10,7 @@
                 <div class="categories__slider owl-carousel">
                     @foreach ($category_global as $category_home)
                         <div class="col-lg-3">
-                            <div class="categories__item set-bg" data-setbg="{{url('public/uploads/category')}}/{{$category_home->image_category}}">
+                            <div class="categories__item set-bg" data-setbg="{{url('uploads/category')}}/{{$category_home->image_category}}">
                                 <h5><a href="{{route('view',['slug'=>$category_home->slug])}}">{{$category_home->name}}</a></h5>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                             <div class="col-lg-4">
                                 <div class="product__discount__item">
                                     <div class="product__discount__item__pic set-bg"
-                                        data-setbg="{{url('public/uploads/products')}}/{{$sale->image}}">
+                                        data-setbg="{{url('uploads/products')}}/{{$sale->image}}">
                                         <div class="product__discount__percent">
                                             <b>SALE</b>
                                         </div>
@@ -68,7 +68,7 @@
                 @foreach ($top_product as $top)
                     <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="{{url('public/uploads/products')}}/{{$top->image}}">
+                        <div class="featured__item__pic set-bg" data-setbg="{{url('uploads/products')}}/{{$top->image}}">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -93,12 +93,12 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="banner__pic">
-                        <img src="{{url('public/client')}}/img/banner/banner-1.jpg" alt="">
+                        <img src="{{url('client')}}/img/banner/banner-1.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="banner__pic">
-                        <img src="{{url('public/client')}}/img/banner/banner-2.jpg" alt="">
+                        <img src="{{url('client')}}/img/banner/banner-2.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="{{url('public/client')}}/img/blog/blog-1.jpg" alt="">
+                            <img src="{{url('client')}}/img/blog/blog-1.jpg" alt="">
                         </div>
                         <div class="blog__item__text">
                             <ul>
@@ -134,7 +134,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="{{url('public/client')}}/img/blog/blog-2.jpg" alt="">
+                            <img src="{{url('client')}}/img/blog/blog-2.jpg" alt="">
                         </div>
                         <div class="blog__item__text">
                             <ul>
@@ -149,7 +149,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="{{url('public/client')}}/img/blog/blog-3.jpg" alt="">
+                            <img src="{{url('client')}}/img/blog/blog-3.jpg" alt="">
                         </div>
                         <div class="blog__item__text">
                             <ul>

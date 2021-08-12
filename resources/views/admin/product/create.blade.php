@@ -146,7 +146,7 @@
 @endsection
 @section('css')
     <!-- summernote -->
-    <link rel="stylesheet" href="{{url('public/backend')}}/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="{{url('backend/plugins/summernote/summernote-bs4.min.css')}}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <!-- Font-awesome -->
@@ -154,8 +154,8 @@
 @endsection
 @section('js')
     <!-- Summernote -->
-    <script src="{{url('public/backend')}}/dist/js/slug.js"></script>
-    <script src="{{url('public/backend')}}/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="{{url('backend/dist/js/slug.js')}}"></script>
+    <script src="{{url('backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
     <script>
         $(function () {
             // Summernote

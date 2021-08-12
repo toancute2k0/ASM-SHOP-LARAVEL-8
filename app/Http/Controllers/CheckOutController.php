@@ -6,6 +6,7 @@ use App\Models\OrderDetail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\CheckOutRequest;
+use Illuminate\Support\Facades\Mail;
 
 class CheckOutController extends Controller
 {
@@ -34,7 +35,6 @@ class CheckOutController extends Controller
         ])) {
             $order_id = $order->id;
             $cart = session()->get('cart', []);
-
             foreach($cart as $item){
                 OrderDetail::create([
                     'order_id' => $order_id,
@@ -43,7 +43,17 @@ class CheckOutController extends Controller
                     'price' => $item['price'],
                 ]);
             }
+
+            Mail::send('mail.order-success', array(
+                'order' => $order,
+                'cart_item' => $cart,
+            ), function($message) use ($request){
+                $message->from('nhaozocom700@gmail.com', 'OGANI SHOP');
+                $message->to($request->email);
+                $message->subject('OGANI - Đặt hàng thành công');
+            });
         }
+
         $request->session()->flush();
         return redirect()->route('checkout.success')->with('success', 'Đặt hàng thành công!');
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 
 
@@ -42,7 +43,12 @@ class HomeController extends Controller
         if($category_product) {
             return view('frontend.categoryShop', compact('category_product'));
         } elseif($product_detail) {
-            return view('frontend.shop-details', compact('product_detail'));
+            $same_product = Product::where('category_id', '=', $product_detail->category_id)
+            ->where('id', '!=', $product_detail->id)
+            ->where('status', 1)
+            ->limit(4)
+            ->orderBy('id', 'DESC')->get();
+            return view('frontend.shop-details', compact('product_detail', 'same_product'));
         }else{
             return view('errors.404');
         }
@@ -57,19 +63,8 @@ class HomeController extends Controller
             return view('frontend.search', compact('keyProduct'));
     }
 
-    // public function contact(){
-    //     return view('frontend.contact');
-    // }
-
-    // public function postContact(Request $request){
-    //     \Mail::sent('email.contact',[
-    //         'name' => $request->name,
-    //         'contact' => $request->content,
-    //     ], function($email) use($request){
-    //         $email->to('nhaozocom007@gmail.com', $request->name);
-    //         $email->from($request->email);
-    //         $email->subject('Test Mail thôi ó');
-    //     });
-    // }
+    public function about(){
+        return view('frontend.about');
+    }
 
 }

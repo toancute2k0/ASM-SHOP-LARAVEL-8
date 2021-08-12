@@ -93,7 +93,7 @@
 @endsection @section('content')
 
 <!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-section set-bg" data-setbg="{{url('public/client')}}/img/breadcrumb.jpg">
+<section class="breadcrumb-section set-bg" data-setbg="{{url('client/img/breadcrumb.jpg')}}">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -133,7 +133,7 @@
                                     <td data-th="Product" data-label="Sản Phẩm">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <img src="{{url('public/uploads/products')}}/{{ $details['image'] }}" width="100" />
+                                                <img src="{{url('uploads/products')}}/{{ $details['image'] }}" width="100" />
                                             </div>
                                             <div class="col-md-8">
                                                 <p>{{$details['name']}}</p>

@@ -34,7 +34,7 @@
                         <td>{{$cate->product_cate->count()}}</td>
                         <td>{{$cate->created_at->format('m-d-Y')}}</td>
                         <td class="text-center">
-                            <img src="{{url('public/uploads/category')}}/{{$cate->image_category}}" width="40" />
+                            <img src="{{url('uploads/category')}}/{{$cate->image_category}}" width="40" />
                         </td>
                         <td class="text-right">
                             @if ($cate->status == 0)

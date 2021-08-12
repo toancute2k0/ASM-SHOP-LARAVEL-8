@@ -12,15 +12,15 @@
         {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" /> --}}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="{{url('public/backend')}}/plugins/fontawesome-free/css/all.min.css" />
+        <link rel="stylesheet" href="{{url('backend/plugins/fontawesome-free/css/all.min.css')}}" />
         <!-- overlayScrollbars -->
-        <link rel="stylesheet" href="{{url('public/backend')}}/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
+        <link rel="stylesheet" href="{{url('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}" />
         <!-- DataTables -->
-        <link rel="stylesheet" href="{{url('public/backend')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-        <link rel="stylesheet" href="{{url('public/backend')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-        <link rel="stylesheet" href="{{url('public/backend')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+        <link rel="stylesheet" href="{{url('backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+        <link rel="stylesheet" href="{{url('backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+        <link rel="stylesheet" href="{{url('backend/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
         <!-- Theme style -->
-        <link rel="stylesheet" href="{{url('public/backend')}}/dist/css/adminlte.min.css" />
+        <link rel="stylesheet" href="{{url('backend/dist/css/adminlte.min.css')}}" />
         <!-- JavaScript -->
         <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
         <!-- CSS -->
@@ -75,7 +75,7 @@
                     <div class="dropdown">
                         <div class="user-panel d-flex pr-3" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="image">
-                                <img src="{{url('public/backend')}}/dist/img/admin1.jpg" class="img-circle elevation-2" alt="User Image" />
+                                <img src="{{url('backend/dist/img/admin1.jpg')}}" class="img-circle elevation-2" alt="User Image" />
                             </div>
                             <div class="info">
                                 <a href="#" class="d-block text-dark ">HI {{Auth::user()->name}}</a>
@@ -94,7 +94,7 @@
             <aside class="main-sidebar sidebar-dark-primary elevation-4 bg__custom">
                 <!-- Brand Logo -->
                 <a href="{{route('admin.dashboard')}}" class="brand-link">
-                    <img src="{{url('public/backend')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8;" />
+                    <img src="{{url('backend/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8;" />
                     <span class="brand-text font-weight-light">AdminLTE 3</span>
                 </a>
 
@@ -164,26 +164,26 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{url('public/backend')}}/plugins/jquery/jquery.min.js"></script>
+<script src="{{url('backend/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{url('public/backend')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{url('backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- DataTables  & Plugins -->
-<script src="{{url('public/backend')}}/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="{{url('public/backend')}}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="{{url('public/backend')}}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="{{url('public/backend')}}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="{{url('public/backend')}}/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="{{url('public/backend')}}/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="{{url('public/backend')}}/plugins/jszip/jszip.min.js"></script>
-<script src="{{url('public/backend')}}/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="{{url('public/backend')}}/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="{{url('public/backend')}}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="{{url('public/backend')}}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="{{url('public/backend')}}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="{{url('backend/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{url('backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{url('backend/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{url('backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{url('backend/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{url('backend/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{url('backend/plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{url('backend/plugins/pdfmake/pdfmake.min.js')}}"></script>
+<script src="{{url('backend/plugins/pdfmake/vfs_fonts.js')}}"></script>
+<script src="{{url('backend/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{url('backend/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{url('backend/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{url('public/backend')}}/dist/js/adminlte.min.js"></script>
+<script src="{{url('backend/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{url('public/backend')}}/dist/js/demo.js"></script>
+<script src="{{url('backend/dist/js/demo.js')}}"></script>
 <!-- Page specific script -->
 <script>
     $(function () {

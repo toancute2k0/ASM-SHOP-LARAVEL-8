@@ -1,4 +1,28 @@
-<div class="product__details__tab__desc">
+@extends('layouts.client')
+@section('title', 'Giới Thiệu')
+@section('content')
+        <!-- Breadcrumb Section Begin -->
+        <section class="breadcrumb-section set-bg" data-setbg="{{url('client/img/breadcrumb.jpg')}}">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                <h2>Giới Thiệu</h2>
+                <div class="breadcrumb__option">
+                    <a href="{{route('home.index')}}">Home</a>
+                    <span>Giới Thiệu</span>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+        <!-- Breadcrumb Section End -->
+
+        <!-- Contact Section Begin -->
+        <section class="contact spad">
+        <div class="container">
+            <div class="product__details__tab__desc">
     <h1
         class="ce_headline title-headdline first"
         style="
@@ -24,7 +48,7 @@
                 display: inline-block;
                 padding: 15px 0px 5px;
             "
-            >ĐÔI NÉT VỀ THỰC PHẨM MIỀN TÂY</span
+            >ĐÔI NÉT VỀ CTY TNHH THỰC PHẨM OGANI</span
         >
     </h1>
     <div
@@ -213,7 +237,7 @@
                     text-align: justify;
                 "
             >
-                Công ty TNHH&nbsp;MTV Thực Phẩm Miền Tây
+                Công ty TNHH Thucwj Phaamr OGANI
             </p>
             <p
                 style="
@@ -223,8 +247,7 @@
                     text-align: justify;
                 "
             >
-                Địa chỉ : 861/72/11 Trần Xuân Soạn, P. Tân Hưng, Quận 7, TP.
-                HCM.
+                Địa chỉ : 288 Nguyễn Văn Linh, An Khánh, Ninh Kiều, Cần Thơ.
             </p>
             <p
                 style="
@@ -234,7 +257,7 @@
                     text-align: justify;
                 "
             >
-                Điện thoại : 0909 632 112 - 0906 305 212 (Ms Hồng)
+                Điện thoại : 0822 576 436 (Mr Toản)
             </p>
             <p
                 style="
@@ -244,8 +267,14 @@
                     text-align: justify;
                 "
             >
-                Email : mekongfreshfood@gmail.com
+                Email : toanqpc00613@fpt.edu.vn
             </p>
         </div>
     </div>
 </div>
+
+        </div>
+        </section>
+        <!-- Contact Section End -->
+
+@endsection

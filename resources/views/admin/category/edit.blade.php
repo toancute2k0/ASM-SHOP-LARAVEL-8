@@ -74,10 +74,10 @@
                         <div class="form-group">
                             <label for="">Hình Ảnh</label>
                             <div class="custom-file">
-                                <input value="{{url('public/uploads/category')}}/{{$category->image_category}}" type="file" name="image_category" id="files" class="custom-file-input" id="customFile">
+                                <input value="{{url('uploads/category')}}/{{$category->image_category}}" type="file" name="image_category" id="files" class="custom-file-input" id="customFile">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
-                            <img src="{{url('public/uploads/category')}}/{{$category->image_category}}" id="image" class="rounded" style="width:100%">
+                            <img src="{{url('uploads/category')}}/{{$category->image_category}}" id="image" class="rounded" style="width:100%">
                             @error('image_category')
                             <small id="helpId" class="text-muted"
                                 >{{$message}}</small
@@ -91,7 +91,7 @@
     </div>
 @endsection
 @section('js')
-    <script src="{{url('public/backend')}}/dist/js/slug.js"></script>
+    <script src="{{url('backend/dist/js/slug.js')}}"></script>
     <script>
         // Add the following code if you want the name of the file appear on select
         $(".custom-file-input").on("change", function() {
