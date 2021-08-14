@@ -7,6 +7,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel = "icon" href ="{{url('client/img/O.png')}}"type = "image/x-icon">
     <title>Ogani | @yield('title')</title>
 
     <!-- Google Font -->
@@ -110,7 +111,7 @@
                         <li><a href="{{route('checkout')}}">Thanh Toán</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Bài Viết</a></li>
+                <li><a href="{{route('home.blog')}}">Bài Viết</a></li>
                 <li><a href="{{route('home.about')}}">Giới Thiệu</a></li>
                 <li><a href="{{route('home.contact')}}">Liên Hệ</a></li>
             </ul>
@@ -194,7 +195,7 @@
                                     Sản Phẩm
                                 </a>
                             </li>
-                            <li><a href="#">Bài Viết</a></li>
+                            <li><a href="{{route('home.blog')}}">Bài Viết</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="{{route('home.about')}}">Giới Thiệu</a></li>

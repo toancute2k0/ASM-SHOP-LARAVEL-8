@@ -8,11 +8,13 @@ use App\Http\Controllers\ImageController;
 
 
 Route::get('/', 'HomeController@index') -> name('home.index');
-Route::get('/shop', 'HomeController@shop') -> name('home.shop');
-Route::get('/search', 'HomeController@search') -> name('home.search');
-Route::get('/about', 'HomeController@about') -> name('home.about');
-Route::get('/contact', 'ContactController@contact') -> name('home.contact');
-Route::post('/contact', 'ContactController@postContact') -> name('home.contact');
+Route::get('/san-pham', 'HomeController@shop') -> name('home.shop');
+Route::get('/bai-viet', 'HomeController@blog') -> name('home.blog');
+Route::get('/tim-kiem', 'HomeController@search') -> name('home.search');
+Route::get('/gioi-thieu', 'HomeController@about') -> name('home.about');
+Route::get('/lien-he', 'ContactController@contact') -> name('home.contact');
+Route::post('/lien-he', 'ContactController@postContact') -> name('home.contact');
+
 
 Route::get('/cart', 'CartController@cart')->name('home.cart');
 Route::get('/add-to-cart/{id}', 'CartController@addToCart')->name('add.to.cart');
@@ -53,6 +55,7 @@ Route::post('/register',['as'=>'admin.postRegister','uses'=>'Admin\AdminControll
 Route::get('/logout',['as'=>'admin.logout','uses'=>'Admin\AdminController@logout'])->name('logout');
 
 Route::get('/{slug}', 'HomeController@view') -> name('view');
+Route::get('bai-viet/{slug}', 'HomeController@getBlog') -> name('getBlog');
 
 
 

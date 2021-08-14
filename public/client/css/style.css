@@ -1718,7 +1718,6 @@ ol {
     margin-left: 10px !important;
 }
 
-
 .product__details__text p {
     margin-bottom: 45px;
 }
@@ -2575,11 +2574,32 @@ ol {
     line-height: 30px;
 }
 
-.blog__details__text h3 {
-    color: #333333;
-    font-weight: 700;
-    line-height: 30px;
-    margin-bottom: 30px;
+.css_blog_details p {
+    font-size: 18px !important;
+    line-height: 30px !important;
+}
+.css_blog_details span {
+    font-size: 18px !important;
+    line-height: 30px !important;
+}
+
+.css_blog_details strong {
+    font-size: 30px !important;
+    color: #333333 !important;
+    font-weight: 700 !important;
+    line-height: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+.css_blog_details .v-assist-img {
+    margin-bottom: 30px !important;
+}
+.css_blog_details .v-assist-img {
+    max-width: 100% !important;
+}
+.css_blog_details .v-assist-img {
+    vertical-align: middle !important;
+    border-style: none !important;
 }
 
 .blog__details__author__pic {

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -14,7 +16,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        $blog = Blog::orderBy('id', 'DESC')->get();
+        return view('admin.blog.index', compact('blog'));
     }
 
     /**
@@ -24,7 +27,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.blog.create');
     }
 
     /**
@@ -35,7 +38,25 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = Auth::user()->id;
+        if($request->hasFile("image")){
+            $file=$request->file("image");
+            $ext = $request->image->getClientOriginalExtension();
+            $imageName=time().rand(100,999).'-'.'blog.'.$ext;
+            $file->move(\public_path("uploads/blog/"),$imageName);
+
+            $blog =new Blog([
+                'name' => $request -> name,
+                'slug' => $request -> slug,
+                'summary' => $request -> summary,
+                'description' => $request -> description,
+                'users_id' => $user_id,
+                'image' => $imageName,
+            ]);
+            $blog->save();
+        }
+        // if(Product::create($product)){}
+        return redirect()->route('blog.index')->with('success', 'Thêm bài viết thành công thành công');
     }
 
     /**
@@ -57,7 +78,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return view('admin.blog.edit', compact('blog'));
     }
 
     /**
@@ -69,7 +90,28 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //
+        if($request->hasFile("image")){
+            $imagePath = public_path('uploads/blog/'.$blog->image);
+            if(File::exists($imagePath)){
+                unlink($imagePath);
+            }
+            $file=$request->file("image");
+            $ext = $request->image->getClientOriginalExtension();
+            $blog->image=time().rand(100,999).'-'.'blog.'.$ext;
+            $file->move(\public_path("uploads/blog/"),$blog->image);
+            $request['image']=$blog->image;
+        }
+
+        $blog->update([
+            'name' => $request -> name,
+            'slug' => $request -> slug,
+            'summary' => $request -> summary,
+            'description' => $request -> description,
+            'status' => $request -> status,
+            'image' => $blog->image,
+        ]);
+
+        return redirect()->route('blog.index')->with('success', 'Cập nhật bài viết thành công');
     }
 
     /**
@@ -80,6 +122,11 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        $imagePath = public_path('uploads/blog/'.$blog->image);
+        if(File::exists($imagePath)){
+            unlink($imagePath);
+        }
+        $blog->delete();
+        return redirect()->route('blog.index')->with('success', 'Xoá Bài viết thành công');
     }
 }

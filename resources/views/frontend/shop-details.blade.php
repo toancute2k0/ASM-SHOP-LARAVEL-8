@@ -1,4 +1,7 @@
 @extends('layouts.client')
+@section('title')
+    {{$product_detail->name}}
+@endsection
 @section('content')
 
     <!-- Breadcrumb Section Begin -->
