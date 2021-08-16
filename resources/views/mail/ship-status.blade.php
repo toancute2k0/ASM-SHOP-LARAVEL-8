@@ -474,12 +474,12 @@
                 @php $count = 1 @endphp @foreach ($cart_item as $details)
                 <tr>
                     <td class="cotSTT">{{$count}}</td>
-                    <td class="cotTenSanPham">{{$details['name']}}</td>
+                    <td class="cotTenSanPham">{{$details->detail_product->name}}</td>
                     <td class="cotGia">
                         {{number_format($details['price'],0,",",".")}}đ
                     </td>
                     <td class="cotSoLuong" align="center">
-                        {{$details['quantity']}}
+                        {{$details->quantity}}
                     </td>
                     <td class="cotSo">
                         {{number_format($details['price'] *
@@ -495,9 +495,22 @@
                 </tr>
             </table>
             <div class="alert">
-                Dear, {{$order->name}}
+                Dear, <span style="color: #380bff">{{$order->name}}</span>
                 <br />
-                Đơn hàng của bạn đang chờ được xác nhận, tình trạng giao nhận
+                Đơn hàng của bạn
+                @if ($order->status == 0)
+                    <span style="color: #380bff"> đang chờ được xử lí</span>
+                @endif
+                @if ($order->status == 1)
+                    <span style="color: #380bff"> đang được vận chuyển</span>
+                @endif
+                @if ($order->status == 2)
+                    <span style="color: #380bff"> đã giao thành công</span>
+                @endif
+                @if ($order->status == 3)
+                    <span style="color: #380bff"> đã bị huỷ</span>
+                @endif
+                , tình trạng giao nhận
                 hàng sẽ được cập nhật qua email
                 <span style="color: #380bff"> {{$order->email}} </span> cho quý
                 khách sớm nhất có thể. Cảm ơn bạn đẽ ghé cửa hàng chúng tôi!

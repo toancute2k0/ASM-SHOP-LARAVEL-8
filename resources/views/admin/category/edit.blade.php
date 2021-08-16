@@ -67,7 +67,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                            <button type="submit" class="btn btn-block btn-dark rounded-0">CẬP NHẬT</button>
                         </div>
                     </div>
                     <div class="col-md-4">

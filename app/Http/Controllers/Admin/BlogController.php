@@ -6,6 +6,8 @@ use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use App\Http\Requests\Blog\StoreBlog;
+use App\Http\Requests\Blog\UpdateBlog;
 
 class BlogController extends Controller
 {
@@ -36,7 +38,7 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBlog $request)
     {
         $user_id = Auth::user()->id;
         if($request->hasFile("image")){
@@ -88,7 +90,7 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(UpdateBlog $request, Blog $blog)
     {
         if($request->hasFile("image")){
             $imagePath = public_path('uploads/blog/'.$blog->image);

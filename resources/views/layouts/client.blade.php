@@ -87,7 +87,12 @@
         <div class="humberger__menu__widget">
             @if (Auth::check())
                 <div class="header__top__right__language">
-                <a href="{{url('#')}}">{{ Auth::user()->name }}</a>
+                <a href="{{route('manager.index')}}">{{ Auth::user()->name }}
+                    <ul class="header__menu__dropdown">
+                        <li><a href="{{route('manager.index')}}">Cập Nhật Tài Khoản</a></li>
+                        <li><a href="{{route('manager.index')}}">Đổi Mật Khẩu</a></li>
+                    </ul>
+                </a>
                 </div>
                 <div class="header__top__right__auth">
                     <a href="{{route('logout')}}" onclick="return confirm('Bạn có nỡ thoát sau ?')">Thoát</a>
@@ -155,9 +160,11 @@
                             </div>
                             @if (Auth::check())
                                 <div class="header__top__right__language">
-                                <a href="{{url('#')}}">
-                                    <i class="fa fa-user"></i>
-                                    {{ Auth::user()->name }}
+                                <a href="{{route('manager.index')}}">{{ Auth::user()->name }}
+                                    <ul class="header__menu__dropdown" style="width: 170px;">
+                                        <li><a href="{{route('manager.index')}}">Cập Nhật Tài Khoản</a></li>
+                                        <li><a href="{{route('manager.updatePass')}}">Đổi Mật Khẩu</a></li>
+                                    </ul>
                                 </a>
                                 </div>
                                 <div class="header__top__right__auth">

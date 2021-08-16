@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>OGANI - Đăng Kí</title>
+        <title>OGANI - Quên Mật Khẩu</title>
         <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -211,8 +211,16 @@
                             />
                         </div>
                         <div class="formBx">
-                                <form action="{{url('/login')}}" method="post" role="form"> @csrf
-                                <h2>Đăng Nhập</h2>
+                                <form action="{{route('changePass')}}" method="post" role="form"> @csrf
+                                <h2>Quên Mật Khẩu</h2>
+                                <p class="signup form-check" style="
+                                        color: #677eff;
+                                        text-transform: none;
+                                        padding: 0;
+                                        margin: 10px 0px 2px;
+                                    ">
+                                    Vui lòng nhập thông tin tài khoản để lấy lại mật khẩu!
+                                </p>
                                 <input
                                     class="input-css"
                                     type="email"
@@ -222,47 +230,13 @@
                                 @error('email')
                                     <small id="fileHelpId" class="form-text text-muted ml-2">{{$message}}</small>
                                 @enderror
-                                <input
-                                    class="input-css"
-                                    type="password"
-                                    name="password"
-                                    placeholder="Mật Khẩu"
-                                />
-                                @error('password')
-                                    <small id="fileHelpId" class="form-text text-muted ml-2">{{$message}}</small>
-                                @enderror
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p class="signup form-check">
-                                            <input
-                                                type="checkbox"
-                                                name="checkrmb"
-                                                class="form-check-input"
-                                            />
-                                            Ghi nhớ đăng nhập ?
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <p class="signup form-check">
-                                            <a href="{{route('changePass')}}">
-                                                Quên Mật Khẩu
-                                            </a>
-                                        </p>
-                                    </div>
-                                </div>
+
                                 <input
                                     class="input-css"
                                     type="submit"
                                     name=""
-                                    value="Đăng Nhập"
+                                    value="XÁC NHẬN"
                                 />
-                                <p class="signup">
-                                    Nếu chưa có tài khoản ?
-                                    <a href="{{url('/register')}}"
-                                        >Đăng Kí</a
-                                    >
-                                </p>
                             </form>
                         </div>
                     </div>

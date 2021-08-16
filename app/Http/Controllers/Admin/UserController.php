@@ -65,7 +65,7 @@ class UserController extends Controller
     public function update(UpdateUser $request, user $user)
     {
 
-        if($request->has('password') != Auth::user()->password){
+        if($request->password != $user->password){
             $password = bcrypt($request->password);
             $request->merge([
                 'password' => $password,

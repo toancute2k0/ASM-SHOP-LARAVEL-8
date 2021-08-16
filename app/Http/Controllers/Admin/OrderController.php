@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -40,9 +41,18 @@ class OrderController extends Controller
 
     public function update(Request $request, Order $order)
     {
+        $order_detail = OrderDetail::where('order_id', $order->id)->get();
         $order->update([
             'status' => $request->status,
         ]);
+        Mail::send('mail.ship-status', array(
+            'order' => $order,
+            'cart_item' => $order_detail,
+        ), function($message) use ($order){
+            $message->from('nhaozocom700@gmail.com', 'OGANI SHOP');
+            $message->to($order->email);
+            $message->subject('OGANI - Tình Trạng Đơn Hàng');
+        });
         return redirect()->route('order.index')->with('success', 'Cập nhật đơn hàng thành công');
     }
 

@@ -136,7 +136,7 @@
                         @enderror
                     </div>
                     <div class="form-group d-flex flex-row-reverse">
-                        <button type="submit" class="btn btn-primary">Thêm Mới</button>
+                        <button type="submit" class="btn btn-block btn-dark rounded-0">THÊM MỚI</button>
                     </div>
                 </div>
             </div>

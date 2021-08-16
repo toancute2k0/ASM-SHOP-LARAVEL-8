@@ -173,7 +173,7 @@
                         @enderror
                     </div>
                     <div class="form-group d-flex flex-row-reverse">
-                        <button type="submit" class="btn btn-primary">Cập nhật</button>
+                        <button type="submit" class="btn btn-block btn-dark rounded-0">CẬP NHẬT</button>
                     </div>
                 </div>
             </div>

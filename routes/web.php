@@ -14,7 +14,15 @@ Route::get('/tim-kiem', 'HomeController@search') -> name('home.search');
 Route::get('/gioi-thieu', 'HomeController@about') -> name('home.about');
 Route::get('/lien-he', 'ContactController@contact') -> name('home.contact');
 Route::post('/lien-he', 'ContactController@postContact') -> name('home.contact');
+Route::get('/quen-mat-khau', 'ContactController@changePass') -> name('changePass');
+Route::post('/quen-mat-khau', 'ContactController@submitChangePass') -> name('changePass');
 
+Route::prefix('tai-khoan')->group(function () {
+    Route::get('/', 'ManagerUser@index') -> name('manager.index');
+    Route::post('/cap-nhat', 'ManagerUser@update') -> name('manager.update');
+    Route::get('/doi-mat-khau', 'ManagerUser@getUpdatePass') -> name('manager.getPass');
+    Route::post('/doi-mat-khau', 'ManagerUser@updatePass') -> name('manager.updatePass');
+});
 
 Route::get('/cart', 'CartController@cart')->name('home.cart');
 Route::get('/add-to-cart/{id}', 'CartController@addToCart')->name('add.to.cart');
@@ -37,7 +45,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         'category' => 'CategoryController',
         'product' => 'ProductController',
         'banner' => 'BannerController',
-        'account' => 'AccountController',
         'blog' => 'BlogController',
         'order' => 'OrderController',
         'user' => 'UserController',
